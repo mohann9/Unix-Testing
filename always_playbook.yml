@@ -1,0 +1,21 @@
+---
+- hosts: mygroup
+  tasks:
+  - name: sample block
+    block:
+    - name: task1
+      debug:
+        msg: "This is task1"
+
+    - name: task2 - shell
+      shell:
+        cmd: "/bin/true"
+
+    - name: task3 
+      debug:
+        msg: "This is task3"
+
+    always:
+    - name: sample always print
+      debug:
+        msg: "I am in always"
